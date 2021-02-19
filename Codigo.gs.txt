@@ -1,0 +1,28 @@
+function doGet(e){
+  var ss = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1khKZgFCfPY1dsj7Sd2NuThK0Qiw_gk_Hukg4ErN3dms/edit#gid=0");
+  //Give your Sheet name here
+  var sheet = ss.getSheetByName("Hoja 1");
+
+  insert(e,sheet);
+
+}
+
+function doPost(e){
+  var ss = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/1khKZgFCfPY1dsj7Sd2NuThK0Qiw_gk_Hukg4ErN3dms/edit#gid=0");
+  //Give your Sheet name here
+  var sheet = ss.getSheetByName("Hoja 1");
+
+  insert(e,sheet);
+
+}
+
+
+function insert(e,sheet){
+   // reciving scanned data from client i.e android app
+  var sdata = e.parameter.sdata;
+  
+  var date = new Date()
+  
+  sheet.appendRow([date,sdata]);
+  
+}
